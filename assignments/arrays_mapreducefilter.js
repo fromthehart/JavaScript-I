@@ -110,7 +110,7 @@ console.log(carModels.sort()); // or console.log(inventory.map(model => model.ca
 //   carYears.push(inventory[i].car_year);
 // }
 // console.log(carYears);
-console.log("\n==== Challenge 4 ====\nThe accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.\m");
+console.log("\n==== Challenge 4 ====\nThe accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.\n");
 console.log("> let carYears = inventory.map(model => model.car_year);\n> console.log(carYears);");
 let carYears = inventory.map(model => model.car_year);
 console.log(carYears);

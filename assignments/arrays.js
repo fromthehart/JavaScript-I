@@ -92,7 +92,7 @@ console.log(carModels.sort());
 
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
-console.log("\n==== Challenge 4 ====\nThe accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.\m");
+console.log("\n==== Challenge 4 ====\nThe accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.\n");
 console.log("> let carYears = [];\n> for (let i = 0; i < inventory.length; i++) {\n    carYears.push(inventory[i].car_year);\n  }\n> console.log(carYears);");
 let carYears = [];
 for (let i = 0; i < inventory.length; i++) {
