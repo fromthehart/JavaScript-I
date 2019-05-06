@@ -72,16 +72,16 @@ let inventory = [{"id":1,"car_make":"Lincoln","car_model":"Navigator","car_year"
 //}
 //console.log(`Car 33 is a *car year goes here* *car make goes here* *car model goes here*` );
 console.log("==== Challenge 1 ====\nThe dealer can't recall the information for a car with an id of 33 on his lot. Help the dealer find out which car has an id of 33 by logging the car's year, make, and model in the console log.\n");
-console.log("> let car33 = inventory.filter(carId => carId.id == 33);\n> if (car33[0] !== undefined) console.log(`Car 33 is a ${car33[0].car_year} ${car33[0].car_make} ${car33[0].car_model}`);");
-let car33 = inventory.filter(carId => carId.id == 33);
+console.log("> let car33 = inventory.filter(carId => carId.id === 33);\n> if (car33[0] !== undefined) console.log(`Car 33 is a ${car33[0].car_year} ${car33[0].car_make} ${car33[0].car_model}`);");
+let car33 = inventory.filter(carId => carId.id === 33);
 if (car33[0] !== undefined) console.log(`Car 33 is a ${car33[0].car_year} ${car33[0].car_make} ${car33[0].car_model}`);
 
 console.log("\n> let index1 = inventory.map(carId => carId.id).indexOf(33);\n> if (index1 !== -1) console.log(`Car 33 is a ${inventory[index1].car_year} ${inventory[index1].car_make} ${inventory[index1].car_model}`);");
 let index1 = inventory.map(carId => carId.id).indexOf(33);
 if (index1 !== -1) console.log(`Car 33 is a ${inventory[index1].car_year} ${inventory[index1].car_make} ${inventory[index1].car_model}`);
 
-console.log("\n> let index2 = inventory.findIndex(carId => carId.id == 33);\n> if (index2 !== -1) console.log(`Car 33 is a ${inventory[index2].car_year} ${inventory[index2].car_make} ${inventory[index2].car_model}`);");
-let index2 = inventory.findIndex(carId => carId.id == 33);
+console.log("\n> let index2 = inventory.findIndex(carId => carId.id === 33);\n> if (index2 !== -1) console.log(`Car 33 is a ${inventory[index2].car_year} ${inventory[index2].car_make} ${inventory[index2].car_model}`);");
+let index2 = inventory.findIndex(carId => carId.id === 33);
 if (index2 !== -1) console.log(`Car 33 is a ${inventory[index2].car_year} ${inventory[index2].car_make} ${inventory[index2].car_model}`);
 
 // ==== Challenge 2 ====
@@ -138,6 +138,6 @@ console.log(oldCarsCount);
 // }
 // console.log(JSON.stringify(BMWAndAudi));
 console.log("\n==== Challenge 6 ====\nA buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.\n");
-console.log("> let BMWAndAudi = inventory.filter(make => (make.car_make == \"BMW\" || make.car_make == \"Audi\"));\n> console.log(JSON.stringify(BMWAndAudi, null, 2));");
-let BMWAndAudi = inventory.filter(make => (make.car_make == "BMW" || make.car_make == "Audi"));
+console.log("> let BMWAndAudi = inventory.filter(make => (make.car_make === \"BMW\" || make.car_make === \"Audi\"));\n> console.log(JSON.stringify(BMWAndAudi, null, 2));");
+let BMWAndAudi = inventory.filter(make => (make.car_make === "BMW" || make.car_make === "Audi"));
 console.log(JSON.stringify(BMWAndAudi, null, 2));

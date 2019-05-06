@@ -65,9 +65,9 @@ let inventory = [{"id":1,"car_make":"Lincoln","car_model":"Navigator","car_year"
 // The dealer can't recall the information for a car with an id of 33 on his lot. Help the dealer find out which car has an id of 33 by logging the car's year, make, and model in the console log provided to you below:
 // console.log(`Car 33 is a *car year goes here* *car make goes here* *car model goes here*` );
 console.log("==== Challenge 1 ====\nThe dealer can't recall the information for a car with an id of 33 on his lot. Help the dealer find out which car has an id of 33 by logging the car's year, make, and model in the console log.\n");
-console.log("> for (let i = 0; i < inventory.length; i++) {\n   if (inventory[i]['id'] == '33') {\n    console.log(`Car 33 is a ${inventory[i]['car_year']} ${inventory[i]['car_make']} ${inventory[i]['car_model']}`);\n    break;\n   }\n  }");
+console.log("> for (let i = 0; i < inventory.length; i++) {\n   if (inventory[i]['id'] === '33') {\n    console.log(`Car 33 is a ${inventory[i]['car_year']} ${inventory[i]['car_make']} ${inventory[i]['car_model']}`);\n    break;\n   }\n  }");
 for (let i = 0; i < inventory.length; i++) {
-  if (inventory[i]['id'] == '33') {
+  if (inventory[i]['id'] === '33') {
     console.log(`Car 33 is a ${inventory[i]['car_year']} ${inventory[i]['car_make']} ${inventory[i]['car_model']}`);
     break;
   }
@@ -114,9 +114,9 @@ console.log(oldCars.length);
 // ==== Challenge 6 ====
 // A buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
 console.log("\n==== Challenge 6 ====\nA buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.\n");
-console.log("> let BMWAndAudi = [];\n> for (let i = 0; i < inventory.length; i++) {\n    if (inventory[i].car_make == \"BMW\" || inventory[i].car_make == \"Audi\") BMWAndAudi.push(inventory[i]);\n  }\n> console.log(JSON.stringify(BMWAndAudi, null, 2));");
+console.log("> let BMWAndAudi = [];\n> for (let i = 0; i < inventory.length; i++) {\n    if (inventory[i].car_make === \"BMW\" || inventory[i].car_make === \"Audi\") BMWAndAudi.push(inventory[i]);\n  }\n> console.log(JSON.stringify(BMWAndAudi, null, 2));");
 let BMWAndAudi = [];
 for (let i = 0; i < inventory.length; i++) {
-  if (inventory[i].car_make == "BMW" || inventory[i].car_make == "Audi") BMWAndAudi.push(inventory[i]);
+  if (inventory[i].car_make === "BMW" || inventory[i].car_make === "Audi") BMWAndAudi.push(inventory[i]);
 }
 console.log(JSON.stringify(BMWAndAudi, null, 2));
