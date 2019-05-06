@@ -84,7 +84,6 @@ console.log("\n> let index2 = inventory.findIndex(carId => carId.id == 33);\n> i
 let index2 = inventory.findIndex(carId => carId.id == 33);
 if (index2 !== undefined) console.log(`Car 33 is a ${inventory[index2].car_year} ${inventory[index2].car_make} ${inventory[index2].car_model}`);
 
-
 // ==== Challenge 2 ====
 // The dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.
 // let lastCar = inventory.length - 1;
