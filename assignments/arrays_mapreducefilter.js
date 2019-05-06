@@ -76,11 +76,11 @@ console.log("> let car33 = inventory.filter(carId => carId.id == 33);\n> if (car
 let car33 = inventory.filter(carId => carId.id == 33);
 if (car33[0] !== undefined) console.log(`Car 33 is a ${car33[0].car_year} ${car33[0].car_make} ${car33[0].car_model}`);
 
-console.log("\n> let index1 = inventory.map(carId => carId.id).indexOf(33);\n> if (index1 !== undefined) console.log(`Car 33 is a ${inventory[index1].car_year} ${inventory[index1].car_make} ${inventory[index1].car_model}`);");
+console.log("\n> let index1 = inventory.map(carId => carId.id).indexOf(33);\n> if (index1 !== -1) console.log(`Car 33 is a ${inventory[index1].car_year} ${inventory[index1].car_make} ${inventory[index1].car_model}`);");
 let index1 = inventory.map(carId => carId.id).indexOf(33);
 if (index1 !== -1) console.log(`Car 33 is a ${inventory[index1].car_year} ${inventory[index1].car_make} ${inventory[index1].car_model}`);
 
-console.log("\n> let index2 = inventory.findIndex(carId => carId.id == 33);\n> if (index2 !== undefined) console.log(`Car 33 is a ${inventory[index2].car_year} ${inventory[index2].car_make} ${inventory[index2].car_model}`);");
+console.log("\n> let index2 = inventory.findIndex(carId => carId.id == 33);\n> if (index2 !== -1) console.log(`Car 33 is a ${inventory[index2].car_year} ${inventory[index2].car_make} ${inventory[index2].car_model}`);");
 let index2 = inventory.findIndex(carId => carId.id == 33);
 if (index2 !== -1) console.log(`Car 33 is a ${inventory[index2].car_year} ${inventory[index2].car_make} ${inventory[index2].car_model}`);
 
