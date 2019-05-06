@@ -61,62 +61,83 @@ let inventory = [{"id":1,"car_make":"Lincoln","car_model":"Navigator","car_year"
 //     arr[i]; // 1,2,3,4
 // }
 
+// Redoing these examples with .map(), .filter(), .reduce()
+
 // ==== Challenge 1 ====
 // The dealer can't recall the information for a car with an id of 33 on his lot. Help the dealer find out which car has an id of 33 by logging the car's year, make, and model in the console log provided to you below:
-// console.log(`Car 33 is a *car year goes here* *car make goes here* *car model goes here*` );
+//for (let i = 0; i < inventory.length; i++) {
+//  if (inventory[i]['id'] == '33') {
+//    console.log(`Car 33 is a ${inventory[i]['car_year']} ${inventory[i]['car_make']} ${inventory[i]['car_model']}` );
+//  }
+//}
+//console.log(`Car 33 is a *car year goes here* *car make goes here* *car model goes here*` );
 console.log("==== Challenge 1 ====\nThe dealer can't recall the information for a car with an id of 33 on his lot. Help the dealer find out which car has an id of 33 by logging the car's year, make, and model in the console log.\n");
-console.log("> for (let i = 0; i < inventory.length; i++) {\n   if (inventory[i]['id'] === '33') {\n    console.log(`Car 33 is a ${inventory[i]['car_year']} ${inventory[i]['car_make']} ${inventory[i]['car_model']}`);\n    break;\n   }\n  }");
-for (let i = 0; i < inventory.length; i++) {
-  if (inventory[i]['id'] === '33') {
-    console.log(`Car 33 is a ${inventory[i]['car_year']} ${inventory[i]['car_make']} ${inventory[i]['car_model']}`);
-    break;
-  }
-}
+console.log("> let car33 = inventory.filter(carId => carId.id === 33);\n> if (car33[0] !== undefined) console.log(`Car 33 is a ${car33[0].car_year} ${car33[0].car_make} ${car33[0].car_model}`);");
+let car33 = inventory.filter(carId => carId.id === 33);
+if (car33[0] !== undefined) console.log(`Car 33 is a ${car33[0].car_year} ${car33[0].car_make} ${car33[0].car_model}`);
+
+console.log("\n> let index1 = inventory.map(carId => carId.id).indexOf(33);\n> if (index1 !== -1) console.log(`Car 33 is a ${inventory[index1].car_year} ${inventory[index1].car_make} ${inventory[index1].car_model}`);");
+let index1 = inventory.map(carId => carId.id).indexOf(33);
+if (index1 !== -1) console.log(`Car 33 is a ${inventory[index1].car_year} ${inventory[index1].car_make} ${inventory[index1].car_model}`);
+
+console.log("\n> let index2 = inventory.findIndex(carId => carId.id === 33);\n> if (index2 !== -1) console.log(`Car 33 is a ${inventory[index2].car_year} ${inventory[index2].car_make} ${inventory[index2].car_model}`);");
+let index2 = inventory.findIndex(carId => carId.id === 33);
+if (index2 !== -1) console.log(`Car 33 is a ${inventory[index2].car_year} ${inventory[index2].car_make} ${inventory[index2].car_model}`);
 
 // ==== Challenge 2 ====
 // The dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.
-console.log("\n==== Challenge 2 ====\nThe dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.\n");
-console.log("> let lastCar = inventory.length - 1;\n> console.log(`The last car is a ${inventory[lastCar]['car_year']} ${inventory[lastCar]['car_make']} ${inventory[lastCar]['car_model']}`);");
-let lastCar = inventory.length - 1;
-console.log(`The last car is a ${inventory[lastCar]['car_year']} ${inventory[lastCar]['car_make']} ${inventory[lastCar]['car_model']}`);
+// let lastCar = inventory.length - 1;
+// console.log(`The last car is a ${inventory[lastCar]['car_year']} ${inventory[lastCar]['car_make']} ${inventory[lastCar]['car_model']}` );
+console.log("\n==== Challenge 2 ====\nThe dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.");
+console.log("¯\\_(ツ)_/¯ I can't think of any way that map, reduce or filter would be of benefit in retrieving the last element of an array. Ideas?");
 
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
+// let carModels = [];
+// for (let i = 0; i < inventory.length; i++) {
+//   carModels.push(inventory[i].car_model);
+// }
+// console.log(carModels.sort());
 console.log("\n==== Challenge 3 ====\nThe marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console.\n");
-console.log("> let carModels = [];\n> for (let i = 0; i < inventory.length; i++) {\n    carModels.push(inventory[i].car_model);\n  }\n> console.log(carModels.sort());");
-let carModels = [];
-for (let i = 0; i < inventory.length; i++) {
-  carModels.push(inventory[i].car_model);
-}
-console.log(carModels.sort());
+console.log("> let carModels = inventory.map(model => model.car_model);\n> console.log(carModels.sort());");
+let carModels = inventory.map(model => model.car_model);
+console.log(carModels.sort()); // or console.log(inventory.map(model => model.car_model).sort());
 
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
+// let carYears = [];
+// for (let i = 0; i < inventory.length; i++) {
+//   carYears.push(inventory[i].car_year);
+// }
+// console.log(carYears);
 console.log("\n==== Challenge 4 ====\nThe accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.\n");
-console.log("> let carYears = [];\n> for (let i = 0; i < inventory.length; i++) {\n    carYears.push(inventory[i].car_year);\n  }\n> console.log(carYears);");
-let carYears = [];
-for (let i = 0; i < inventory.length; i++) {
-  carYears.push(inventory[i].car_year);
-}
+console.log("> let carYears = inventory.map(model => model.car_year);\n> console.log(carYears);");
+let carYears = inventory.map(model => model.car_year);
 console.log(carYears);
 
 // ==== Challenge 5 ====
 // The car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging it's length.
+// let oldCars = [];
+// for (let i = 0; i < carYears.length; i++) {
+//   // Pushing the entire inventory entry since the assignment isn't specific about which data to populate oldCars with
+//   if (carYears[i] < 2000) oldCars.push(inventory[i]);  
+// }
+// console.log(oldCars.length); 
 console.log("\n==== Challenge 5 ====\nThe car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging it's length.\n");
-console.log("> let oldCars = [];\n> for (let i = 0; i < carYears.length; i++) {\n    // Pushing the entire inventory entry since the assignment isn't specific about which data to populate oldCars with\n    if (carYears[i] < 2000) oldCars.push(inventory[i]);\n  }\n> console.log(oldCars.length); ");
-let oldCars = [];
-for (let i = 0; i < carYears.length; i++) {
-  // Pushing the entire inventory entry since the assignment isn't specific about which data to populate oldCars with
-  if (carYears[i] < 2000) oldCars.push(inventory[i]);  
-}
-console.log(oldCars.length); 
+console.log("> let oldCarsCount = carYears.reduce((count, year) => {\n    return count += (year < 2000 ? 1 : 0); // Maybe less clear than an if, but I love the ternary operator for stuff like this\n  }, 0);\n> console.log(oldCarsCount);");
+let oldCarsCount = carYears.reduce((count, year) => {
+  return count += (year < 2000 ? 1 : 0); // Maybe less clear than an if, but I love the ternary operator for stuff like this
+}, 0);
+console.log(oldCarsCount);
 
 // ==== Challenge 6 ====
 // A buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
+// let BMWAndAudi = [];
+// for (let i = 0; i < inventory.length; i++) {
+//   if (inventory[i].car_make == "BMW" || inventory[i].car_make == "Audi") BMWAndAudi.push(inventory[i]);
+// }
+// console.log(JSON.stringify(BMWAndAudi));
 console.log("\n==== Challenge 6 ====\nA buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.\n");
-console.log("> let BMWAndAudi = [];\n> for (let i = 0; i < inventory.length; i++) {\n    if (inventory[i].car_make === \"BMW\" || inventory[i].car_make === \"Audi\") BMWAndAudi.push(inventory[i]);\n  }\n> console.log(JSON.stringify(BMWAndAudi, null, 2));");
-let BMWAndAudi = [];
-for (let i = 0; i < inventory.length; i++) {
-  if (inventory[i].car_make === "BMW" || inventory[i].car_make === "Audi") BMWAndAudi.push(inventory[i]);
-}
+console.log("> let BMWAndAudi = inventory.filter(make => (make.car_make === \"BMW\" || make.car_make === \"Audi\"));\n> console.log(JSON.stringify(BMWAndAudi, null, 2));");
+let BMWAndAudi = inventory.filter(make => (make.car_make === "BMW" || make.car_make === "Audi"));
 console.log(JSON.stringify(BMWAndAudi, null, 2));
